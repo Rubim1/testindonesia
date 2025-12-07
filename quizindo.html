@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Bahasa Indonesia Kelas 8 - Tingkat Dewa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            text: '#f1f5f9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .option-card {
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .correct-anim {
+            animation: pulse-green 0.5s;
+        }
+
+        .wrong-anim {
+            animation: shake 0.4s;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-4px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(4px);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 bg-fixed">
+    <!-- START SCREEN -->
+    <div id="start-screen" class="glass-panel w-full max-w-2xl p-8 rounded-2xl shadow-2xl text-center animate-fade-in">
+        <div class="mb-6">
+            <span
+                class="inline-block px-3 py-1 text-xs font-semibold text-blue-300 bg-blue-900/50 rounded-full mb-4 border border-blue-700">MATERI
+                SAS GANJIL</span>
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                Tantangan Bahasa Indonesia
+            </h1>
+            <p class="text-slate-400 text-lg">Kelas 8 • Tingkat Kesulitan: <span
+                    class="text-red-400 font-bold">NERAKA</span></p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-left text-sm text-slate-300">
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <div class="font-bold text-blue-400 mb-1">⏳ Waktu</div>
+                45 Menit (Otomatis Selesai)
+            </div>
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <div class="font-bold text-emerald-400 mb-1">📝 Soal</div>
+                40 Butir (LHO, Iklan, Artikel)
+            </div>
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <div class="font-bold text-purple-400 mb-1">🏆 Target</div>
+                KKM: 85 (Good Luck!)
+            </div>
+        </div>
+        <button onclick="startQuiz()"
+            class="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all w-full md:w-auto shadow-[0_0_20px_rgba(37,99,235,0.5)] overflow-hidden">
+            <span class="relative z-10 flex items-center justify-center gap-2">
+                MULAI UJIAN
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </span>
+        </button>
+    </div>
+
+    <!-- QUIZ INTERFACE -->
+    <div id="quiz-interface" class="hidden w-full max-w-4xl animate-fade-in relative">
+        <div class="flex justify-between items-center mb-6 glass-panel p-4 rounded-xl">
+            <div class="flex items-center gap-4">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                    <svg class="absolute inset-0 w-full h-full transform -rotate-90">
+                        <circle cx="24" cy="24" r="20" stroke="#334155" stroke-width="4" fill="transparent"></circle>
+                        <circle id="timer-circle" cx="24" cy="24" r="20" stroke="#ef4444" stroke-width="4"
+                            fill="transparent" stroke-dasharray="125.6" stroke-dashoffset="0"></circle>
+                    </svg>
+                    <span id="timer-text" class="text-sm font-bold">45:00</span>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-400">Soal</div>
+                    <div class="font-bold text-xl"><span id="current-question-num">1</span><span
+                            class="text-slate-500 text-sm">/40</span></div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-xs text-slate-400">Score Saat Ini</div>
+                <div class="font-bold text-emerald-400 text-xl" id="current-score-display">0</div>
+            </div>
+        </div>
+
+        <div class="glass-panel p-6 md:p-8 rounded-2xl mb-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300"
+                id="progress-bar" style="width: 0%"></div>
+            <div class="mb-4">
+                <span id="question-category"
+                    class="text-xs font-bold tracking-wider text-blue-400 uppercase bg-blue-900/30 px-2 py-1 rounded">LHO</span>
+            </div>
+            <div id="question-context"
+                class="mb-6 p-4 bg-slate-800/50 rounded-lg border-l-4 border-blue-500 text-slate-300 italic text-sm leading-relaxed hidden">
+            </div>
+            <h2 id="question-text" class="text-xl md:text-2xl font-semibold leading-tight mb-8">Pertanyaan akan muncul
+                di sini...</h2>
+            <div id="options-container" class="grid grid-cols-1 gap-3"></div>
+        </div>
+
+        <div class="flex justify-between">
+            <button onclick="prevQuestion()" id="btn-prev"
+                class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                &larr; Sebelumnya
+            </button>
+            <button onclick="nextQuestion()" id="btn-next"
+                class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors shadow-lg shadow-blue-900/50">
+                Selanjutnya &rarr;
+            </button>
+        </div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="hidden w-full max-w-4xl animate-fade-in pb-10">
+        <div class="glass-panel p-8 rounded-3xl text-center mb-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500">
+            </div>
+            <h2 class="text-3xl font-bold mb-2">Hasil Ujian</h2>
+            <p class="text-slate-400 mb-8">Apakah kamu lulus KKM?</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+                <div class="relative w-48 h-48 flex items-center justify-center">
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle cx="96" cy="96" r="88" stroke="#1e293b" stroke-width="12" fill="transparent"></circle>
+                        <circle id="score-circle" cx="96" cy="96" r="88" stroke="#3b82f6" stroke-width="12"
+                            fill="transparent" stroke-dasharray="552.9" stroke-dashoffset="552.9"
+                            stroke-linecap="round"></circle>
+                    </svg>
+                    <div class="absolute flex flex-col items-center">
+                        <span id="final-score" class="text-6xl font-bold text-white">0</span>
+                        <span class="text-sm text-slate-400 uppercase tracking-widest mt-1">Nilai Akhir</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-left">
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                        <div class="text-xs text-slate-400">Total Benar</div>
+                        <div class="text-2xl font-bold text-emerald-400" id="total-correct">0</div>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                        <div class="text-xs text-slate-400">Total Salah</div>
+                        <div class="text-2xl font-bold text-red-400" id="total-wrong">0</div>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700 col-span-2">
+                        <div class="text-xs text-slate-400">Waktu Pengerjaan</div>
+                        <div class="text-xl font-bold text-blue-400" id="time-taken">00:00</div>
+                    </div>
+                </div>
+            </div>
+            <div id="feedback-message"
+                class="p-4 rounded-xl bg-blue-900/20 border border-blue-900/50 text-blue-200 mb-6"></div>
+            <button onclick="location.reload()"
+                class="px-8 py-3 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-colors">
+                Ulangi Ujian
+            </button>
+        </div>
+        <h3 class="text-xl font-bold mb-4 px-2 border-l-4 border-blue-500">Pembahasan & Tips</h3>
+        <div id="review-container" class="space-y-4"></div>
+    </div>
+
+    <div id="toast"
+        class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-2xl border border-slate-700 opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-3">
+        <span id="toast-icon"></span>
+        <span id="toast-message"></span>
+    </div>
+
+    <script>
+        // ----------------DATA SOAL (40 Soal - Versi Revisi Sesuai Soal Anda)----------------
+        const questions = [
+            // Soal 1-10: LHO
+            {
+                id: 1,
+                category: "LHO (Makna Kata)",
+                context: `"Tanaman Amorphophallus titanum atau bunga bangkai memiliki fase vegetatif dan generatif yang bergantian. Pada fase vegetatif, muncul daun dan batang semu yang tingginya dapat mencapai 6 meter. Setelah beberapa tahun, organ vegetatif ini layu dan umbinya mengalami masa dormansi. Jika cadangan makanan di umbi mencukupi, bunga majemuk akan muncul. Namun, banyak pengunjung sering keliru menyamakan spesies ini dengan Rafflesia arnoldii karena keduanya mengeluarkan aroma busuk untuk menarik serangga polinator."`,
+                question: "Makna kata dormansi dan polinator dalam konteks paragraf di atas adalah....",
+                options: [
+                    "Masa pertumbuhan cepat; hewan pemangsa",
+                    "Masa istirahat sementara; hewan penyerbuk",
+                    "Masa pembusukan batang; serangga pengganggu",
+                    "Masa pergantian daun; serangga pemakan madu"
+                ],
+                correctIndex: 1,
+                explanation: "Dormansi = masa istirahat sementara. Polinator = hewan penyerbuk seperti serangga.",
+                tip: "Cari petunjuk konteks: 'layu' → 'muncul lagi' = istirahat."
+            },
+            {
+                id: 2,
+                category: "LHO (Miskonsepsi)",
+                context: `"Tanaman Amorphophallus titanum atau bunga bangkai memiliki fase vegetatif dan generatif yang bergantian. Pada fase vegetatif, muncul daun dan batang semu yang tingginya dapat mencapai 6 meter. Setelah beberapa tahun, organ vegetatif ini layu dan umbinya mengalami masa dormansi. Jika cadangan makanan di umbi mencukupi, bunga majemuk akan muncul. Namun, banyak pengunjung sering keliru menyamakan spesies ini dengan Rafflesia arnoldii karena keduanya mengeluarkan aroma busuk untuk menarik serangga polinator."`,
+                question: "Berdasarkan teks tersebut, manakah pernyataan yang menunjukkan kesalahan logika umum (miskonsepsi) yang sering terjadi di masyarakat?",
+                options: [
+                    "Bunga bangkai memiliki fase vegetatif yang sangat panjang hingga bertahun-tahun.",
+                    "Umbi bunga bangkai memerlukan cadangan makanan untuk memunculkan bunga.",
+                    "Menganggap Amorphophallus titanum adalah spesies yang sama dengan Rafflesia arnoldii.",
+                    "Bunga bangkai mengeluarkan aroma busuk hanya pada fase vegetatif saja."
+                ],
+                correctIndex: 2,
+                explanation: "Teks menyatakan bahwa masyarakat sering keliru menyamakan dua spesies berbeda.",
+                tip: "Fokus pada frasa 'banyak pengunjung sering keliru'."
+            },
+            {
+                id: 3,
+                category: "LHO (Tanda Baca)",
+                context: `"Namun, banyak pengunjung sering keliru menyamakan spesies ini dengan Rafflesia arnoldii karena keduanya mengeluarkan aroma busuk untuk menarik serangga polinator."`,
+                question: "Jika kalimat tersebut ingin diubah menjadi lebih efektif dengan tanda baca yang tepat, perbaikan manakah yang paling krusial pada kalimat terakhir?",
+                options: [
+                    "Menghapus tanda titik di akhir kalimat.",
+                    "Menambahkan tanda koma (,) sebelum kata karena.",
+                    "Mengubah penulisan Rafflesia arnoldii menjadi tegak.",
+                    "Menambahkan tanda koma (,) setelah kata Namun."
+                ],
+                correctIndex: 3,
+                explanation: "Kata hubung antarkalimat 'Namun' harus diikuti tanda koma.",
+                tip: "Aturan: Namun, [kalimat lanjutan]."
+            },
+            {
+                id: 4,
+                category: "LHO (Analisis Data)",
+                context: `<div class='bg-slate-900/50 p-3 rounded mb-2 overflow-x-auto'>
+                <table class='w-full text-sm text-left border-collapse'>
+                    <thead><tr class='border-b border-slate-600'><th class='p-2'>Tahun</th><th class='p-2'>Jumlah Individu</th><th class='p-2'>Kondisi Hutan Bakau</th></tr></thead>
+                    <tbody>
+                        <tr class='border-b border-slate-700/50'><td class='p-2'>2020</td><td class='p-2'>150 ekor</td><td class='p-2'>Sangat Lebat (90%)</td></tr>
+                        <tr class='border-b border-slate-700/50'><td class='p-2'>2022</td><td class='p-2'>110 ekor</td><td class='p-2'>Terdegradasi (60%)</td></tr>
+                        <tr><td class='p-2'>2024</td><td class='p-2'>65 ekor</td><td class='p-2'>Rusak Berat (30%)</td></tr>
+                    </tbody>
+                </table></div>`,
+                question: "Simpulan hubungan sebab-akibat (kausalitas) yang paling tepat berdasarkan tabel di atas dan logika ekosistem adalah....",
+                options: [
+                    "Penurunan populasi bekantan menyebabkan kerusakan hutan bakau menjadi semakin parah setiap tahunnya.",
+                    "Penurunan luas dan kualitas hutan bakau berkorelasi lurus dengan penurunan drastis populasi bekantan.",
+                    "Populasi bekantan tahun 2022 menurun karena adanya wabah penyakit, bukan karena kondisi hutan.",
+                    "Kerusakan hutan bakau tidak mempengaruhi populasi bekantan karena mereka hewan yang adaptif."
+                ],
+                correctIndex: 1,
+                explanation: "Data menunjukkan hubungan sebab-akibat: hutan rusak → populasi turun.",
+                tip: "Lihat tren: semakin rusak hutan, semakin sedikit populasi."
+            },
+            {
+                id: 5,
+                category: "LHO (Evaluasi Data)",
+                context: "Seorang siswa menulis deskripsi berdasarkan data tahun 2024: \"Populasi bekantan mengalami kenaikan signifikan meskipun hutan rusak.\"",
+                question: "Evaluasi yang tepat terhadap kalimat siswa tersebut adalah....",
+                options: [
+                    "Valid, karena data menunjukkan angka 65 yang merupakan angka keberuntungan.",
+                    "Tidak valid, karena bertentangan dengan data yang menunjukkan penurunan drastis dari 110 ke 65.",
+                    "Valid, karena bekantan dapat bertahan hidup di lahan kritis.",
+                    "Tidak valid, karena siswa tidak mencantumkan persentase kerusakan hutan."
+                ],
+                correctIndex: 1,
+                explanation: "Data 2022: 110 → 2024: 65 = PENURUNAN, bukan kenaikan.",
+                tip: "Cek angka sebelum menilai validitas pernyataan."
+            },
+            {
+                id: 6,
+                category: "LHO (Tanda Baca)",
+                context: "Bus kota merupakan alat transportasi umum, yang sangat efektif; untuk mengurangi kemacetan: di kota besar.",
+                question: "Analisis fungsi tanda baca pada kalimat di atas menunjukkan kesalahan penggunaan pada....",
+                options: [
+                    "Tanda koma (,) sebelum yang dan tanda titik dua (:) sebelum di.",
+                    "Tanda koma (,) setelah umum dan tanda titik koma (;) setelah efektif.",
+                    "Tanda titik dua (:) setelah kemacetan dan tanda titik (.) di akhir.",
+                    "Tanda titik koma (;) setelah efektif dan tanda titik dua (:) sebelum di."
+                ],
+                correctIndex: 3,
+                explanation: "Titik koma (;) tidak digunakan untuk memisahkan induk-anak kalimat. Titik dua (:) tidak tepat sebelum preposisi 'di'.",
+                tip: "Jangan pakai titik dua/titik koma sembarangan di kalimat tunggal."
+            },
+            {
+                id: 7,
+                category: "LHO (Urutan Paragraf)",
+                context: "(1) Oleh karena itu, kita harus menjaga kebersihan pantai.<br>(2) Sampah plastik mendominasi 80% limbah yang ditemukan di pesisir.<br>(3) Pantai merupakan batas antara daratan dan lautan yang memiliki ekosistem unik.<br>(4) Jenis sampah tersebut berupa botol, kantong kresek, hingga sedotan.",
+                question: "Urutan yang logis agar menjadi teks LHO yang padu adalah....",
+                options: [
+                    "(3) - (1) - (2) - (4)",
+                    "(3) - (2) - (4) - (1)",
+                    "(1) - (3) - (2) - (4)",
+                    "(2) - (4) - (3) - (1)"
+                ],
+                correctIndex: 1,
+                explanation: "Pola: umum → khusus → simpulan.",
+                tip: "Definisi → Fakta → Rincian → Saran."
+            },
+            {
+                id: 8,
+                category: "LHO (Kata Baku)",
+                context: "",
+                question: "Kalimat manakah yang mengandung kata serapan yang penulisan atau penggunaannya tidak baku?",
+                options: [
+                    "Para relawan sedang melakukan standarisasi data pengamatan.",
+                    "Sistem pencernaan sapi sangat kompleks dan unik.",
+                    "Kualitas atmosfer bumi sedang dipantau oleh para ahli.",
+                    "Risiko kepunahan hewan endemik semakin tinggi."
+                ],
+                correctIndex: 0,
+                explanation: "Kata baku adalah 'standardisasi' (dengan huruf 'd').",
+                tip: "Standardisasi = dengan D."
+            },
+            {
+                id: 9,
+                category: "LHO (Objektivitas)",
+                context: "\"Kupu-kupu ini sangat indah. Sayapnya berwarna-warni memukau hati siapa saja yang melihatnya. Saya merasa tenang saat melihatnya terbang.\"",
+                question: "Kritik yang tepat terhadap paragraf LHO di atas adalah....",
+                options: [
+                    "Sudah baik karena mendeskripsikan objek dengan detail.",
+                    "Kurang baik karena terlalu banyak menggunakan data statistik.",
+                    "Tidak objektif karena mengandung opini dan perasaan penulis (subjektif).",
+                    "Sangat baik karena menggunakan bahasa sastra yang indah."
+                ],
+                correctIndex: 2,
+                explanation: "LHO harus objektif. Kalimat mengandung kata 'saya', 'indah', 'memukau' = subjektif.",
+                tip: "LHO = fakta, bukan perasaan."
+            },
+            {
+                id: 10,
+                category: "LHO (Deskripsi Bagian)",
+                context: "Topik: Pohon Kelapa",
+                question: "Manakah kalimat deskripsi bagian yang paling tepat?",
+                options: [
+                    "Pohon kelapa adalah tumbuhan serbaguna yang banyak tumbuh di pantai.",
+                    "Mengapa pohon kelapa disebut pohon kehidupan?",
+                    "Akarnya berupa akar serabut yang kuat menembus tanah, sedangkan batangnya beruas-ruas.",
+                    "Sebaiknya kita menanam pohon kelapa di halaman rumah."
+                ],
+                correctIndex: 2,
+                explanation: "Mendeskripsikan bagian fisik objek secara rinci.",
+                tip: "Fokus pada bagian fisik: akar, batang, daun."
+            },
+
+            // Soal 11-20: Iklan/Slogan/Poster
+            {
+                id: 11,
+                category: "IKLAN (Makna Kata)",
+                context: "DETERJEN X-CLEAN! Mengandung formula Biodegradable Surfactant dan Enzim Protease. Sekali kucek, noda lenyap, sungai tetap sehat!",
+                question: "Makna kata teknis Biodegradable dalam konteks iklan tersebut bertujuan untuk....",
+                options: [
+                    "Menegaskan bahwa deterjen ini dapat membunuh kuman seketika.",
+                    "Membujuk konsumen bahwa produk ini ramah lingkungan dan dapat terurai secara alami.",
+                    "Menunjukkan bahwa produk ini menghasilkan busa yang sangat melimpah.",
+                    "Memberitahu bahwa deterjen ini mengandung pewangi buatan yang kuat."
+                ],
+                correctIndex: 1,
+                explanation: "Biodegradable = dapat terurai oleh mikroorganisme → ramah lingkungan.",
+                tip: "Bio = hidup, degradable = bisa diurai."
+            },
+            {
+                id: 12,
+                category: "IKLAN (Kalimat)",
+                context: "Sekali kucek, noda lenyap",
+                question: "Bagian kalimat tersebut termasuk jenis kalimat....",
+                options: [
+                    "Imperatif (perintah)",
+                    "Interogatif (tanya)",
+                    "Persuasif hiperbolis (bujukan yang melebih-lebihkan)",
+                    "Deskripsi objektif (fakta apa adanya)"
+                ],
+                correctIndex: 2,
+                explanation: "Klaim 'sekali kucek langsung lenyap' adalah hiperbola untuk meyakinkan.",
+                tip: "Iklan sering lebay untuk menarik minat."
+            },
+            {
+                id: 13,
+                category: "IKLAN (Evaluasi)",
+                context: "Iklan Deterjen X-CLEAN ditujukan untuk masyarakat pedesaan yang kurang memahami istilah asing.",
+                question: "Evaluasi kelemahan iklan tersebut adalah....",
+                options: [
+                    "Gambar produk kurang besar.",
+                    "Penggunaan istilah sains (Biodegradable/Protease) sulit dipahami target audiens.",
+                    "Kalimat slogan terlalu pendek.",
+                    "Tidak mencantumkan harga produk."
+                ],
+                correctIndex: 1,
+                explanation: "Bahasa iklan harus disesuaikan dengan pemahaman audiens.",
+                tip: "Sesuaikan bahasa dengan audiens sasarannya."
+            },
+            {
+                id: 14,
+                category: "SLOGAN (Perbandingan)",
+                context: "Slogan 1: \"Buku adalah Jendela Dunia.\"<br>Slogan 2: \"Satu Buku, Sejuta Ilmu, Masa Depan Menunggu.\"",
+                question: "Perbandingan efektivitas kedua slogan tersebut adalah....",
+                options: [
+                    "Slogan 1 lebih baik karena menggunakan majas metafora yang klasik dan ringkas.",
+                    "Slogan 2 lebih buruk karena terlalu panjang dan bertele-tele.",
+                    "Slogan 2 lebih motivasional karena menonjolkan dampak masa depan (akibat).",
+                    "Keduanya tidak efektif karena tidak mengajak orang membeli buku."
+                ],
+                correctIndex: 2,
+                explanation: "Slogan 2 lebih kuat karena menunjukkan efek (sebab-akibat) dan berima.",
+                tip: "Slogan yang menyentuh masa depan lebih menggugah."
+            },
+            {
+                id: 15,
+                category: "POSTER (Adaptasi Bahasa)",
+                context: "Poster Kesehatan: \"Cegah Hipertensi dengan Kurangi Natrium!\"",
+                question: "Agar poster ini dipahami oleh anak SMP, istilah Natrium sebaiknya diganti dengan....",
+                options: [
+                    "Gula",
+                    "Garam",
+                    "Lemak",
+                    "Vitamin"
+                ],
+                correctIndex: 1,
+                explanation: "Natrium adalah unsur utama dalam garam dapur (NaCl).",
+                tip: "Natrium = garam = asin."
+            },
+            {
+                id: 16,
+                category: "IKLAN (Remaja)",
+                context: "Iklan layanan masyarakat untuk remaja agar tidak merokok.",
+                question: "Iklan yang paling efektif adalah....",
+                options: [
+                    "Menampilkan gambar paru-paru yang rusak parah dengan istilah medis rumit.",
+                    "Menampilkan tabel statistik kematian akibat rokok.",
+                    "Menggunakan narasi: \"Rokok bikin wajahmu cepat tua dan napasmu bau, gak keren!\"",
+                    "Mengutip pasal undang-undang tentang larangan merokok."
+                ],
+                correctIndex: 2,
+                explanation: "Remaja lebih peduli pada citra diri dan penilaian sosial.",
+                tip: "Sentuh 'gengsi' dan penampilan."
+            },
+            {
+                id: 17,
+                category: "IKLAN (Kelengkapan)",
+                context: "Di jual cepat. Rumah tipe 36. Lokasi strategis. Hub: 0812xxx.",
+                question: "Iklan di atas kurang lengkap karena tidak mencantumkan....",
+                options: [
+                    "Kalimat persuasif yang puitis.",
+                    "Testimoni pembeli sebelumnya.",
+                    "Harga jual dan alamat detail/kota.",
+                    "Foto rumah tampak depan."
+                ],
+                correctIndex: 2,
+                explanation: "Harga dan lokasi adalah informasi utama dalam iklan jual beli.",
+                tip: "Kalau jualan, selalu cantumkan harga!"
+            },
+            {
+                id: 18,
+                category: "POSTER (Pesan Tersirat)",
+                question: "Kalimat manakah yang mengandung pesan tersirat (implisit)?",
+                options: [
+                    "Buanglah sampah pada tempatnya!",
+                    "Hutan gundul, air mata cucu mengalir.",
+                    "Cuci tangan pakai sabun selama 20 detik.",
+                    "Dilarang merokok di area sekolah."
+                ],
+                correctIndex: 1,
+                explanation: "Air mata cucu = metafora penderitaan generasi mendatang.",
+                tip: "Tersirat = pakai kiasan, bukan perintah langsung."
+            },
+            {
+                id: 19,
+                category: "IKLAN (Headline)",
+                question: "Manakah headline iklan yang bersifat provokatif?",
+                options: [
+                    "Tersedia berbagai macam sepatu sekolah.",
+                    "Jangan beli sepatu ini jika Anda tidak ingin jadi pusat perhatian!",
+                    "Sepatu merek X terbuat dari bahan kulit asli.",
+                    "Kami menjual sepatu dengan harga standar."
+                ],
+                correctIndex: 1,
+                explanation: "Menggunakan psikologi terbalik (reverse psychology) untuk memancing rasa penasaran.",
+                tip: "Larangan justru bikin penasaran!"
+            },
+            {
+                id: 20,
+                category: "POSTER (Visual)",
+                context: "Gambar: Tumpukan botol plastik membentuk gunung.<br>Teks: \"Gunung yang tidak ingin kita daki.\"",
+                question: "Maksud kombinasi tersebut adalah....",
+                options: [
+                    "Mengajak orang mendaki gunung sampah.",
+                    "Kritik sosial terhadap penumpukan sampah plastik yang mengkhawatirkan.",
+                    "Mempromosikan wisata gunung baru.",
+                    "Menjelaskan cara mendaur ulang botol plastik."
+                ],
+                correctIndex: 1,
+                explanation: "Metafora visual: gunung sampah = masalah besar yang menumpuk.",
+                tip: "Gunung sampah = simbol krisis lingkungan."
+
+            },
+
+            // Soal 21-30: Artikel Ilmiah Populer
+            {
+                id: 21,
+                category: "ARTIKEL (Fakta)",
+                context: "(1) Kecerdasan Buatan (AI) kini merambah dunia pendidikan.<br>(2) Menurut data Kemendikbud, penggunaan platform belajar berbasis AI meningkat 40% pada tahun 2024.<br>(3) Saya rasa, keberadaan AI akan sepenuhnya menggantikan peran guru.<br>(4) Meskipun membantu, AI tidak memiliki empati.",
+                question: "Kalimat yang merupakan Fakta ditandai nomor....",
+                options: [
+                    "(1) dan (3)",
+                    "(2) dan (4)",
+                    "(1) dan (2)",
+                    "(3) dan (4)"
+                ],
+                correctIndex: 2,
+                explanation: "(1) fakta umum, (2) data statistik. (3) & (4) opini.",
+                tip: "Fakta = bisa diverifikasi."
+            },
+            {
+                id: 22,
+                category: "ARTIKEL (Opini)",
+                context: "Saya rasa, keberadaan AI akan sepenuhnya menggantikan peran guru dalam lima tahun ke depan.",
+                question: "Kalimat tersebut dikategorikan sebagai opini prediksi yang lemah karena....",
+                options: [
+                    "Menggunakan kata teknis 'platform'.",
+                    "Didukung oleh data statistik yang akurat.",
+                    "Bersifat subjektif ('Saya rasa') dan belum terbukti kebenarannya.",
+                    "Menyatakan hal yang sudah pasti terjadi."
+                ],
+                correctIndex: 2,
+                explanation: "Opini lemah karena tidak didukung data dan bersifat subjektif.",
+                tip: "Opini = 'saya rasa', fakta = data."
+            },
+            {
+                id: 23,
+                category: "ARTIKEL (Argumen)",
+                context: "Meskipun membantu, AI tidak memiliki empati yang diperlukan dalam mendidik karakter siswa.",
+                question: "Fungsi kalimat tersebut adalah sebagai....",
+                options: [
+                    "Tesis (Pernyataan pendapat pendukung AI).",
+                    "Argumen kontra/sanggahan terhadap dominasi AI.",
+                    "Data pendukung statistik.",
+                    "Simpulan akhir penulis."
+                ],
+                correctIndex: 1,
+                explanation: "Kalimat ini menyanggah klaim bahwa AI sempurna.",
+                tip: "Kata kunci: 'Meskipun' = kontra."
+            },
+            {
+                id: 24,
+                category: "ARTIKEL (Judul)",
+                question: "Judul artikel ilmiah populer yang paling menarik namun relevan adalah....",
+                options: [
+                    "Sejarah Perkembangan Komputer dari Masa ke Masa",
+                    "AI: Sahabat atau Ancaman bagi Guru Masa Depan?",
+                    "Cara Menggunakan Aplikasi Belajar Online",
+                    "Daftar Harga Robot Pengajar Tahun 2025"
+                ],
+                correctIndex: 1,
+                explanation: "Bentuk pertanyaan retoris memicu rasa penasaran.",
+                tip: "Judul tanya = lebih menarik."
+            },
+            {
+                id: 25,
+                category: "ARTIKEL (Gaya Bahasa)",
+                question: "Perbedaan utama antara artikel ilmiah murni dengan artikel ilmiah populer terletak pada....",
+                options: [
+                    "Artikel populer tidak menggunakan data/fakta.",
+                    "Artikel populer menggunakan bahasa yang santai, renyah, dan mudah dipahami awam.",
+                    "Artikel ilmiah murni tidak memiliki struktur pendahuluan.",
+                    "Artikel populer hanya berisi opini penulis tanpa referensi."
+                ],
+                correctIndex: 1,
+                explanation: "Artikel populer dibuat agar mudah dipahami masyarakat umum.",
+                tip: "Populer = ringan & komunikatif."
+            },
+            {
+                id: 26,
+                category: "ARTIKEL (Kohesi)",
+                context: "Pemanasan global memicu cuaca ekstrem. Petani di desa kami mengeluh karena musim panen menjadi tidak menentu. [ ... ]. Akibatnya, harga beras di pasar lokal melambung tinggi.",
+                question: "Kalimat yang tepat untuk melengkapi bagian rumpang tersebut agar kohesif adalah....",
+                options: [
+                    "Pemerintah harus segera mengimpor beras dari luar negeri.",
+                    "Banyak tanaman padi yang gagal panen karena banjir atau kekeringan mendadak.",
+                    "Teknologi pertanian modern sangat dibutuhkan oleh petani milenial.",
+                    "Matahari bersinar sangat terik pada siang hari ini."
+                ],
+                correctIndex: 1,
+                explanation: "Logika sebab-akibat: cuaca ekstrem → gagal panen → harga naik.",
+                tip: "Isi mata rantai yang hilang."
+            },
+            {
+                id: 27,
+                category: "ARTIKEL (Struktur)",
+                question: "Struktur artikel ilmiah populer yang benar secara urut adalah....",
+                options: [
+                    "Isi - Pendahuluan - Penutup",
+                    "Pendahuluan (Lead) - Isi (Tubuh) - Penutup (Simpulan)",
+                    "Pernyataan Umum - Deskripsi Bagian - Deskripsi Manfaat",
+                    "Orientasi - Komplikasi - Resolusi"
+                ],
+                correctIndex: 1,
+                explanation: "Struktur standar: Lead – Body – Conclusion.",
+                tip: "Mirip burger: roti-isi-roti."
+            },
+            {
+                id: 28,
+                category: "ARTIKEL (Data)",
+                question: "Cara penyajian data tentang 'Tingkat Literasi Siswa SMP' yang paling efektif agar pembaca tidak bosan adalah....",
+                options: [
+                    "Menuliskannya dalam 10 paragraf teks penuh tanpa jeda.",
+                    "Menggunakan infografis atau diagram batang yang disertai analisis singkat.",
+                    "Melampirkan file mentah Excel di dalam artikel.",
+                    "Hanya menuliskan rumus matematika penghitungan rata-rata."
+                ],
+                correctIndex: 1,
+                explanation: "Infografis membuat data kompleks jadi menarik dan mudah dipahami.",
+                tip: "Gambar > 1000 kata."
+            },
+            {
+                id: 29,
+                category: "ARTIKEL (Sinonim)",
+                context: "Menurut pendapat saya, sebaiknya pemerintah mengkaji ulang kebijakan zonasi sekolah.",
+                question: "Kata 'mengkaji' dalam kalimat tersebut bersinonim dengan....",
+                options: [
+                    "Menghapus",
+                    "Menelaah/memeriksa",
+                    "Melaksanakan",
+                    "Mengumumkan"
+                ],
+                correctIndex: 1,
+                explanation: "Mengkaji = menelaah secara mendalam.",
+                tip: "Kaji = periksa dalam-dalam."
+            },
+            {
+                id: 30,
+                category: "ARTIKEL (Ciri Bahasa)",
+                question: "Manakah yang merupakan ciri khas bahasa dalam artikel ilmiah populer?",
+                options: [
+                    "Kaku, penuh istilah asing tanpa penjelasan, dan sangat formal.",
+                    "Menggunakan gaya bahasa naratif (bercerita), komunikatif, namun tetap logis.",
+                    "Menggunakan banyak majas puitis dan kata kiasan yang abstrak.",
+                    "Singkat, padat, seperti bahasa telegram."
+                ],
+                correctIndex: 1,
+                explanation: "Gaya naratif membuat sains terasa hidup dan tidak membosankan.",
+                tip: "Sains bisa diceritakan seperti kisah."
+            },
+
+            // Soal 31-40: Menulis & Menyunting
+            {
+                id: 31,
+                category: "MENULIS (Prosedur)",
+                context: "Langkah LHO Acak:<br>1. Menentukan objek observasi.<br>2. Mengembangkan kerangka menjadi teks utuh.<br>3. Melakukan pengamatan di lapangan.<br>4. Menyusun kerangka karangan.<br>5. Menyunting teks.",
+                question: "Urutan prosedur penulisan yang benar adalah....",
+                options: [
+                    "1 - 4 - 3 - 2 - 5",
+                    "1 - 3 - 4 - 2 - 5",
+                    "3 - 1 - 4 - 2 - 5",
+                    "4 - 1 - 3 - 2 - 5"
+                ],
+                correctIndex: 1,
+                explanation: "Urutan logis: tentukan objek → observasi → kerangka → tulis → sunting.",
+                tip: "Jangan nulis sebelum punya data."
+            },
+            {
+                id: 32,
+                category: "MENULIS (Rima Slogan)",
+                context: "Slogan: \"Hutan Lestari, Oksigen Bersemi.\"",
+                question: "Perbaikan agar memiliki rima yang lebih puitis adalah....",
+                options: [
+                    "Hutan Lestari, Lingkungan Asri.",
+                    "Hutan Dijaga, Hewan Bahagia.",
+                    "Jangan Tebang Pohon Sembarangan.",
+                    "Hutan Adalah Paru-Paru Dunia."
+                ],
+                correctIndex: 0,
+                explanation: "Lestari–Asri = rima akhir yang sejalan dan enak didengar.",
+                tip: "Cari akhiran bunyi yang sama (i-i)."
+            },
+            {
+                id: 33,
+                category: "MENULIS (Berpikir Kritis)",
+                context: "Fenomena 'doom spending' di kalangan Gen Z terjadi karena mereka merasa pesimis memiliki rumah di masa depan, sehingga lebih memilih menghabiskan uang untuk kesenangan sesaat.",
+                question: "Pertanyaan kritis untuk menguji validitas opini di atas adalah....",
+                options: [
+                    "Apa definisi dari Gen Z?",
+                    "Di mana Gen Z biasanya berbelanja?",
+                    "Apa bukti riset psikologis atau ekonomi yang mendukung klaim pesimisme tersebut?",
+                    "Berapa harga rumah tipe 36 saat ini?"
+                ],
+                correctIndex: 2,
+                explanation: "Berpikir kritis = menanyakan dasar bukti, bukan asumsi.",
+                tip: "Mana datanya?"
+            },
+            {
+                id: 34,
+                category: "MENYUNTING (Huruf Kapital)",
+                question: "Kesalahan penggunaan huruf kapital terdapat pada kalimat....",
+                options: [
+                    "Kami membaca artikel di harian Kompas.",
+                    "Ibu membeli Pisang Ambon di pasar.",
+                    "Wisatawan asing itu berasal dari Korea Selatan.",
+                    "Mereka mendaki Gunung Ijen minggu lalu."
+                ],
+                correctIndex: 1,
+                explanation: "'Pisang ambon' adalah nama jenis buah → huruf kecil.",
+                tip: "Jeruk bali (kecil), Pergi ke Bali (besar)."
+            },
+            {
+                id: 35,
+                category: "MENULIS (Argumentasi)",
+                context: "Debat AI di Sekolah. Tim Kontra menggunakan argumen emosional.",
+                question: "Manakah pernyataan tim Kontra?",
+                options: [
+                    "Studi menunjukkan AI meningkatkan efisiensi belajar 20%.",
+                    "AI dapat memberikan umpan balik instan pada siswa.",
+                    "Kasihan guru-guru tua yang akan kehilangan martabatnya karena digantikan mesin dingin tak bernyawa.",
+                    "Biaya implementasi AI memang mahal di awal tahun."
+                ],
+                correctIndex: 2,
+                explanation: "Argumentasi emosional menyerang perasaan, bukan logika.",
+                tip: "Cari kata yang membangkitkan emosi ('kasihan', 'martabat')."
+            },
+            {
+                id: 36,
+                category: "MENULIS (Kata Imperatif)",
+                context: "Ikutilah Lomba Pidato Bahasa Indonesia! [...] bakatmu, raih prestasimu!",
+                question: "Kata imperatif yang paling tepat adalah....",
+                options: [
+                    "Tunjukkan",
+                    "Simpan",
+                    "Pikirkan",
+                    "Pelajari"
+                ],
+                correctIndex: 0,
+                explanation: "Konteks lomba = ajakan untuk menampilkan bakat.",
+                tip: "Aksi yang sesuai konteks kompetisi."
+            },
+            {
+                id: 37,
+                category: "MENULIS (Validitas Data)",
+                context: "Artikel teknologi tahun 2025 menggunakan data tahun 2010.",
+                question: "Evaluasi kualitas artikel?",
+                options: [
+                    "Sangat baik, karena menghargai sejarah.",
+                    "Tidak kredibel, karena data sudah kedaluwarsa.",
+                    "Cukup baik, karena data lama lebih akurat.",
+                    "Valid, asalkan sumbernya jelas."
+                ],
+                correctIndex: 1,
+                explanation: "Data teknologi cepat kadaluarsa → tidak relevan di tahun 2025.",
+                tip: "Data harus mutakhir!"
+            },
+            {
+                id: 38,
+                category: "LHO (Simpulan)",
+                question: "Kalimat yang paling tepat dalam bagian 'Simpulan' LHO tentang Perpustakaan Sekolah?",
+                options: [
+                    "Perpustakaan sekolah memiliki luas 10x15 meter.",
+                    "Saya sangat senang berkunjung ke perpustakaan.",
+                    "Berdasarkan pengamatan, perpustakaan sekolah telah memenuhi standar fasilitas namun perlu penambahan koleksi buku fiksi.",
+                    "Pertama, kita masuk ke ruang baca."
+                ],
+                correctIndex: 2,
+                explanation: "Simpulan = rangkuman evaluatif dari hasil observasi.",
+                tip: "Gunakan kata 'berdasarkan' atau 'kesimpulan'."
+            },
+            {
+                id: 39,
+                category: "LHO (Pola Pengembangan)",
+                context: "Buah durian memiliki kulit berduri tajam. Daging buahnya berwarna kuning keemasan dan bertekstur creamy. Aromanya sangat menyengat.",
+                question: "Paragraf di atas menggunakan pola pengembangan....",
+                options: [
+                    "Eksposisi definisi.",
+                    "Deskripsi spasial (ruang).",
+                    "Deskripsi objektif/subjektif (panca indra).",
+                    "Narasi sugestif."
+                ],
+                correctIndex: 2,
+                explanation: "Menggunakan indra: peraba (tajam), penglihatan (warna), penciuman (aroma).",
+                tip: "Deskripsi panca indra = sensori."
+            },
+            {
+                id: 40,
+                category: "IKLAN (Kritik Sosial)",
+                context: "Dibutuhkan wanita, berpenampilan menarik, belum menikah.",
+                question: "Kritik sosial terhadap iklan tersebut dari sudut pandang profesionalisme adalah....",
+                options: [
+                    "Iklan sudah jelas dan tegas.",
+                    "Syarat 'berpenampilan menarik' cenderung subjektif dan tidak relevan dengan kompetensi kerja.",
+                    "Syarat 'belum menikah' sangat penting untuk efisiensi perusahaan.",
+                    "Iklan tersebut diskriminatif terhadap laki-laki."
+                ],
+                correctIndex: 1,
+                explanation: "Profesionalisme diukur dari kompetensi, bukan penampilan fisik.",
+                tip: "Skill > Fisik."
+            }
+        ];
+
+        // ----------------APP STATE----------------
+        let currentQuestion = 0;
+        let score = 0;
+        let timeLeft = 45 * 60;
+        let timerInterval;
+        let userAnswers = new Array(40).fill(null);
+
+        // ----------------LOGIC----------------
+        function startQuiz() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-interface').classList.remove('hidden');
+            document.getElementById('quiz-interface').classList.add('flex', 'flex-col');
+            renderQuestion();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+        function updateTimer() {
+            timeLeft--;
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            const display = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            document.getElementById('timer-text').innerText = display;
+            const totalTime = 45 * 60;
+            const distinctPercent = (timeLeft / totalTime) * 125.6;
+            document.getElementById('timer-circle').style.strokeDashoffset = 125.6 - distinctPercent;
+            if (timeLeft <= 0) finishQuiz();
+            if (timeLeft < 300) {
+                document.getElementById('timer-text').classList.add('text-red-500', 'animate-pulse');
+                document.getElementById('timer-circle').style.stroke = '#ef4444';
+            }
+        }
+        function renderQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question-category').innerText = q.category;
+            const progress = ((currentQuestion) / questions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('current-question-num').innerText = currentQuestion + 1;
+            const ctxEl = document.getElementById('question-context');
+            if (q.context) {
+                ctxEl.innerHTML = q.context;
+                ctxEl.classList.remove('hidden');
+            } else {
+                ctxEl.classList.add('hidden');
+            }
+            document.getElementById('question-text').innerText = q.question;
+            const optsContainer = document.getElementById('options-container');
+            optsContainer.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `option-card w-full text-left p-4 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 hover:border-blue-500 transition-all flex items-center gap-3 group`;
+                btn.onclick = () => selectOption(idx, btn);
+                if (userAnswers[currentQuestion] !== null && userAnswers[currentQuestion].selected === idx) {
+                    btn.classList.add('bg-blue-900', 'border-blue-500');
+                }
+                btn.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-slate-700 group-hover:bg-blue-600 flex items-center justify-center font-bold text-sm transition-colors border border-slate-600">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                    <span class="text-slate-200">${opt}</span>
+                `;
+                optsContainer.appendChild(btn);
+            });
+            document.getElementById('btn-prev').disabled = currentQuestion === 0;
+            document.getElementById('btn-next').innerText = currentQuestion === 39 ? 'Selesai & Lihat Hasil' : 'Selanjutnya →';
+        }
+        function selectOption(idx, btnElement) {
+            const container = document.getElementById('options-container');
+            Array.from(container.children).forEach(child => {
+                child.classList.remove('bg-blue-900', 'border-blue-500', 'ring-2', 'ring-blue-500/50');
+                child.querySelector('div').classList.remove('bg-blue-600');
+            });
+            btnElement.classList.add('bg-blue-900', 'border-blue-500', 'ring-2', 'ring-blue-500/50');
+            btnElement.querySelector('div').classList.add('bg-blue-600');
+            const q = questions[currentQuestion];
+            const isCorrect = idx === q.correctIndex;
+            userAnswers[currentQuestion] = { selected: idx, isCorrect: isCorrect };
+        }
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        }
+        function nextQuestion() {
+            if (userAnswers[currentQuestion] === null) {
+                showToast('⚠️ Pilih jawaban dulu ya!', 'text-yellow-400');
+                document.getElementById('options-container').classList.add('wrong-anim');
+                setTimeout(() => document.getElementById('options-container').classList.remove('wrong-anim'), 500);
+                return;
+            }
+            if (currentQuestion < 39) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+        function showToast(msg, colorClass) {
+            const t = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            t.className = `fixed bottom-8 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full shadow-2xl border border-slate-700 transition-opacity duration-300 z-50 flex items-center gap-3 bg-slate-800 text-white opacity-100 ${colorClass}`;
+            setTimeout(() => { t.style.opacity = '0'; }, 2000);
+        }
+        function finishQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-interface').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            const correctCount = userAnswers.filter(a => a && a.isCorrect).length;
+            const wrongCount = 40 - correctCount;
+            const finalScore = Math.round((correctCount / 40) * 100);
+            animateValue("final-score", 0, finalScore, 1000);
+            document.getElementById('total-correct').innerText = correctCount;
+            document.getElementById('total-wrong').innerText = wrongCount;
+            const usedSeconds = (45 * 60) - timeLeft;
+            const uMins = Math.floor(usedSeconds / 60);
+            const uSecs = usedSeconds % 60;
+            document.getElementById('time-taken').innerText = `${uMins}m ${uSecs}s`;
+            const circle = document.getElementById('score-circle');
+            const circumference = 552.9;
+            const offset = circumference - (finalScore / 100) * circumference;
+            setTimeout(() => {
+                circle.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                circle.style.strokeDashoffset = offset;
+                if (finalScore < 70) circle.style.stroke = '#ef4444';
+                else if (finalScore < 85) circle.style.stroke = '#eab308';
+                else circle.style.stroke = '#22c55e';
+            }, 500);
+            const msgEl = document.getElementById('feedback-message');
+            if (finalScore >= 90) {
+                msgEl.innerHTML = "<strong>LUAR BIASA!</strong> Kamu adalah 'Pustakawan' sejati. Ujian besok pasti gampang!";
+                msgEl.className = "p-4 rounded-xl bg-emerald-900/20 border border-emerald-900/50 text-emerald-200 mb-6";
+            } else if (finalScore >= 75) {
+                msgEl.innerHTML = "<strong>BAGUS!</strong> Hampir sempurna. Perbaiki sedikit lagi di bagian analisis.";
+                msgEl.className = "p-4 rounded-xl bg-blue-900/20 border border-blue-900/50 text-blue-200 mb-6";
+            } else {
+                msgEl.innerHTML = "<strong>BELAJAR LAGI YUK!</strong> Masih banyak jebakan yang kamu kena. Pelajari pembahasan di bawah ini.";
+                msgEl.className = "p-4 rounded-xl bg-red-900/20 border border-red-900/50 text-red-200 mb-6";
+            }
+            renderReviewViz();
+        }
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+        function renderReviewViz() {
+            const container = document.getElementById('review-container');
+            container.innerHTML = '';
+            questions.forEach((q, idx) => {
+                const ans = userAnswers[idx];
+                const isCorrect = ans && ans.isCorrect;
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-xl border ${isCorrect ? 'border-emerald-500/30 bg-emerald-900/10' : 'border-red-500/30 bg-red-900/10'}`;
+                let contextHTML = q.context ? `<div class="text-xs italic text-slate-400 mb-2 border-l-2 border-slate-600 pl-2">"${q.context}"</div>` : '';
+                card.innerHTML = `
+                    <div class="flex gap-4">
+                        <div class="min-w-[30px] h-[30px] rounded-full flex items-center justify-center font-bold text-white ${isCorrect ? 'bg-emerald-500' : 'bg-red-500'}">
+                            ${idx + 1}
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-xs uppercase font-bold text-slate-500 mb-1">${q.category}</div>
+                            ${contextHTML}
+                            <div class="font-semibold text-slate-200 mb-2">${q.question}</div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm mb-3">
+                                <div class="${isCorrect ? 'text-emerald-400' : 'text-red-400'}">
+                                    <span class="opacity-70">Jawabanmu:</span> ${ans ? q.options[ans.selected] : '-'}
+                                </div>
+                                <div class="text-emerald-400">
+                                    <span class="opacity-70">Kunci:</span> ${q.options[q.correctIndex]}
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/50 p-3 rounded-lg text-sm">
+                                <strong class="text-blue-400">Pembahasan:</strong>
+                                <p class="text-slate-300 mt-1">${q.explanation}</p>
+                                <div class="mt-2 text-yellow-500 flex items-start gap-2">
+                                    <span>💡</span>
+                                    <span class="italic text-xs">${q.tip}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>
